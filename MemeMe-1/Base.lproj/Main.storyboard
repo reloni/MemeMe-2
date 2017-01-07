@@ -49,6 +49,18 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wxk-KB-pfi">
                                 <rect key="frame" x="16" y="64" width="343" height="559"/>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ezh-vk-ncz">
+                                <rect key="frame" x="0.0" y="543" width="375" height="60"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i9t-jK-5kb">
+                                <rect key="frame" x="16" y="84" width="343" height="60"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -57,16 +69,24 @@
                             <constraint firstAttribute="trailing" secondItem="gKb-NO-5id" secondAttribute="trailing" id="J5w-yT-fDH"/>
                             <constraint firstAttribute="trailing" secondItem="j4Y-Dj-LW3" secondAttribute="trailing" id="Lm2-fW-PUV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wxk-KB-pfi" secondAttribute="trailing" id="Sqs-0H-OR3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="i9t-jK-5kb" secondAttribute="trailing" id="Ufb-Iu-59W"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="j4Y-Dj-LW3" secondAttribute="bottom" id="W1v-c9-9Ao"/>
                             <constraint firstItem="wxk-KB-pfi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="a8I-YO-OLq"/>
+                            <constraint firstAttribute="trailing" secondItem="ezh-vk-ncz" secondAttribute="trailing" id="aU1-Pn-E9z"/>
+                            <constraint firstItem="i9t-jK-5kb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cqJ-x7-vfn"/>
                             <constraint firstItem="gKb-NO-5id" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="eiw-mR-MML"/>
+                            <constraint firstItem="j4Y-Dj-LW3" firstAttribute="top" secondItem="ezh-vk-ncz" secondAttribute="bottom" constant="20" id="fan-kO-DJd"/>
                             <constraint firstItem="j4Y-Dj-LW3" firstAttribute="top" secondItem="wxk-KB-pfi" secondAttribute="bottom" id="gSn-Y4-37d"/>
+                            <constraint firstItem="i9t-jK-5kb" firstAttribute="top" secondItem="gKb-NO-5id" secondAttribute="bottom" constant="20" id="qdm-kC-rgw"/>
                             <constraint firstItem="j4Y-Dj-LW3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sIP-E5-v2U"/>
+                            <constraint firstItem="ezh-vk-ncz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xOL-Cz-uwq"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomTextField" destination="ezh-vk-ncz" id="l4b-Vz-DXl"/>
                         <outlet property="cameraButton" destination="BXW-2K-Uun" id="TnC-NV-vvn"/>
                         <outlet property="imageView" destination="wxk-KB-pfi" id="UfO-Uv-WwM"/>
+                        <outlet property="topTextField" destination="i9t-jK-5kb" id="era-hS-8Tv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

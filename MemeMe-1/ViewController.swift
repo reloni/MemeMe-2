@@ -13,11 +13,24 @@ import AVFoundation
 class ViewController: UIViewController {
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var cameraButton: UIBarButtonItem!
+	@IBOutlet weak var topTextField: UITextField!
+	@IBOutlet weak var bottomTextField: UITextField!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 		cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+		
+		let memeTextAttributes:[String:Any] = [
+			NSStrokeColorAttributeName: UIColor.black,
+			NSForegroundColorAttributeName: UIColor.white,
+			NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 44)!,
+			NSStrokeWidthAttributeName: -4.0]
+		
+		topTextField.defaultTextAttributes = memeTextAttributes
+		topTextField.textAlignment = .center
+		bottomTextField.defaultTextAttributes = memeTextAttributes
+		bottomTextField.textAlignment = .center
 	}
 
 	override func didReceiveMemoryWarning() {
