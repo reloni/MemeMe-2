@@ -29,13 +29,34 @@ class ViewController: UIViewController {
 		
 		topTextField.defaultTextAttributes = memeTextAttributes
 		topTextField.textAlignment = .center
+		topTextField.delegate = self
 		bottomTextField.defaultTextAttributes = memeTextAttributes
 		bottomTextField.textAlignment = .center
+		bottomTextField.delegate = self
 	}
 
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+		NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+	}
+	
+	func keyboardWillShow(_ notification: Notification) {
+		UIView.animate(withDuration: 0.4, delay: 0.1, options: .curveEaseOut, animations: {
+			self.view.frame.origin.y = 0 - notification.keyboardHeight()
+		})
+	}
+	
+	func keyboardWillHide(_ notification: Notification) {
+		UIView.animate(withDuration: 0.4, delay: 0.1, options: .curveEaseOut, animations: {
+			self.view.frame.origin.y = 0
+		})
 	}
 
 	@IBAction func chooseAlbumImage(_ sender: Any) {
@@ -99,5 +120,18 @@ extension ViewController : UIImagePickerControllerDelegate, UINavigationControll
 		guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
 		
 		imageView.image = image
+	}
+}
+
+extension ViewController : UITextFieldDelegate {
+	func textFieldDidBeginEditing(_ textField: UITextField) {
+		if textField.text == "TOP" || textField.text == "BOTTOM" {
+			textField.text = ""
+		}
+	}
+	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		textField.resignFirstResponder()
+		return true
 	}
 }
