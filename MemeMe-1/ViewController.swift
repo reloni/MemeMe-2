@@ -15,6 +15,7 @@ class ViewController: UIViewController {
 	@IBOutlet weak var cameraButton: UIBarButtonItem!
 	@IBOutlet weak var topTextField: UITextField!
 	@IBOutlet weak var bottomTextField: UITextField!
+	@IBOutlet weak var shareButton: UIBarButtonItem!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -81,35 +82,7 @@ class ViewController: UIViewController {
 		}
 	}
 	
-	
-	func presentImagePicker(for sourceType: UIImagePickerControllerSourceType) {
-		let pickerController = UIImagePickerController()
-		pickerController.allowsEditing = false
-		pickerController.delegate = self
-		pickerController.sourceType = sourceType
-		self.present(pickerController, animated: true, completion: nil)
-	}
-	
-	func showErrorAlert(message: String) {
-		let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-		let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-		alert.addAction(ok)
-		present(alert, animated: true, completion: nil)
-	}
-	
-	func requestPhotosAccess(completion: @escaping (Bool) -> ()) {
-		PHPhotoLibrary.requestAuthorization { result in
-			switch result {
-			case .authorized: DispatchQueue.main.async { completion(true) }
-			default: DispatchQueue.main.async { completion(false) }
-			}
-		}
-	}
-	
-	func requestCameraAccess(completion: @escaping (Bool) -> ()) {
-		AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { result in
-			DispatchQueue.main.async { completion(result) }
-		}
+	@IBAction func share(_ sender: Any) {
 	}
 }
 
@@ -120,6 +93,8 @@ extension ViewController : UIImagePickerControllerDelegate, UINavigationControll
 		guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
 		
 		imageView.image = image
+		
+		shareButton.isEnabled = true
 	}
 }
 
