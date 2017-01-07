@@ -16,6 +16,8 @@ class ViewController: UIViewController {
 	@IBOutlet weak var topTextField: UITextField!
 	@IBOutlet weak var bottomTextField: UITextField!
 	@IBOutlet weak var shareButton: UIBarButtonItem!
+	
+	var editingTextField: UITextField?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -49,8 +51,18 @@ class ViewController: UIViewController {
 	}
 	
 	func keyboardWillShow(_ notification: Notification) {
+		guard let textField = editingTextField else { return }
+
+		let fieldYPosition = view.frame.height - (textField.frame.origin.y + textField.frame.height)
+		let keyboardHeight = notification.keyboardHeight()
+		
+		// adjust frame only if keyboard hides text field
+		guard keyboardHeight > fieldYPosition else {
+			return
+		}
+		
 		UIView.animate(withDuration: 0.4, delay: 0.1, options: .curveEaseOut, animations: {
-			self.view.frame.origin.y = 0 - notification.keyboardHeight()
+			self.view.frame.origin.y = fieldYPosition - keyboardHeight
 		})
 	}
 	
@@ -99,6 +111,11 @@ extension ViewController : UIImagePickerControllerDelegate, UINavigationControll
 }
 
 extension ViewController : UITextFieldDelegate {
+	func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+		editingTextField = textField
+		return true
+	}
+	
 	func textFieldDidBeginEditing(_ textField: UITextField) {
 		if textField.text == "TOP" || textField.text == "BOTTOM" {
 			textField.text = ""
@@ -106,6 +123,7 @@ extension ViewController : UITextFieldDelegate {
 	}
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		editingTextField = nil
 		textField.resignFirstResponder()
 		return true
 	}
