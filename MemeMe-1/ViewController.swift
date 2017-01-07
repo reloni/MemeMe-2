@@ -8,13 +8,16 @@
 
 import UIKit
 import Photos
+import AVFoundation
 
 class ViewController: UIViewController {
 	@IBOutlet weak var imageView: UIImageView!
+	@IBOutlet weak var cameraButton: UIBarButtonItem!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
+		cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -28,12 +31,29 @@ class ViewController: UIViewController {
 				self.showErrorAlert(message: "Photos permission denied. Go to setting to allow access")
 				return
 			}
-			let pickerController = UIImagePickerController()
-			pickerController.allowsEditing = false
-			pickerController.delegate = self
-			self.present(pickerController, animated: true, completion: nil)
+
+			self.presentImagePicker(for: .photoLibrary)
 		}
-		
+	}
+	
+	@IBAction func shootNewImage(_ sender: Any) {
+		requestCameraAccess { isGranted in
+			guard isGranted else {
+				self.showErrorAlert(message: "Camera permission denied. Go to setting to allow access")
+				return
+			}
+			
+			self.presentImagePicker(for: .camera)
+		}
+	}
+	
+	
+	func presentImagePicker(for sourceType: UIImagePickerControllerSourceType) {
+		let pickerController = UIImagePickerController()
+		pickerController.allowsEditing = false
+		pickerController.delegate = self
+		pickerController.sourceType = sourceType
+		self.present(pickerController, animated: true, completion: nil)
 	}
 	
 	func showErrorAlert(message: String) {
@@ -49,6 +69,12 @@ class ViewController: UIViewController {
 			case .authorized: DispatchQueue.main.async { completion(true) }
 			default: DispatchQueue.main.async { completion(false) }
 			}
+		}
+	}
+	
+	func requestCameraAccess(completion: @escaping (Bool) -> ()) {
+		AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { result in
+			DispatchQueue.main.async { completion(result) }
 		}
 	}
 }
