@@ -26,10 +26,11 @@ extension UIViewController {
 		present(alert, animated: true, completion: nil)
 	}
 	
-	func presentImagePicker(for sourceType: UIImagePickerControllerSourceType) {
+	func presentImagePicker(for sourceType: UIImagePickerControllerSourceType,
+	                        delegate: (UIImagePickerControllerDelegate & UINavigationControllerDelegate)? = nil) {
 		let pickerController = UIImagePickerController()
 		pickerController.allowsEditing = false
-		pickerController.delegate = self as? (UIImagePickerControllerDelegate & UINavigationControllerDelegate)
+		pickerController.delegate = delegate
 		pickerController.sourceType = sourceType
 		present(pickerController, animated: true, completion: nil)
 	}

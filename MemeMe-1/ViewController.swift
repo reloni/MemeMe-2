@@ -79,7 +79,7 @@ class ViewController: UIViewController {
 				return
 			}
 
-			self.presentImagePicker(for: .photoLibrary)
+			self.presentImagePicker(for: .photoLibrary, delegate: self)
 		}
 	}
 	
@@ -90,7 +90,7 @@ class ViewController: UIViewController {
 				return
 			}
 			
-			self.presentImagePicker(for: .camera)
+			self.presentImagePicker(for: .camera, delegate: self)
 		}
 	}
 	
