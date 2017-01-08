@@ -35,7 +35,7 @@ extension UIViewController {
 		present(pickerController, animated: true, completion: nil)
 	}
 	
-	func presentActivities(with items: [Any], completion: UIActivityViewControllerCompletionWithItemsHandler? = nil) {
+	func presentActivities(with items: [Any], sourceView: UIView, completion: UIActivityViewControllerCompletionWithItemsHandler? = nil) {
 		let activityController = UIActivityViewController(activityItems: items, applicationActivities: nil)
 		activityController.excludedActivityTypes = [UIActivityType.assignToContact,
 		                                            UIActivityType.openInIBooks,
@@ -43,6 +43,7 @@ extension UIViewController {
 		                                            UIActivityType.postToWeibo,
 		                                            UIActivityType.copyToPasteboard]
 		activityController.completionWithItemsHandler = completion
+		activityController.popoverPresentationController?.sourceView = sourceView
 		present(activityController, animated: true, completion: nil)
 	}
 }

@@ -97,7 +97,7 @@ class ViewController: UIViewController {
 	}
 	
 	@IBAction func share(_ sender: Any) {
-		presentActivities(with: [generateMemeImage()]) { result in
+		presentActivities(with: [generateMemeImage()], sourceView: self.view) { result in
 			if result.1 {
 				self.reset()
 			}

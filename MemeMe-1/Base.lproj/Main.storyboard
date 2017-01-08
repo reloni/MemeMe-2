@@ -22,6 +22,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVS-PN-yGI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKb-NO-5id">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
@@ -72,6 +76,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="eVS-PN-yGI" firstAttribute="bottom" secondItem="gKb-NO-5id" secondAttribute="top" id="1rY-PY-Fa8"/>
                             <constraint firstItem="gKb-NO-5id" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CuB-Ga-ufv"/>
                             <constraint firstItem="wxk-KB-pfi" firstAttribute="top" secondItem="gKb-NO-5id" secondAttribute="bottom" id="G08-2h-7JK"/>
                             <constraint firstAttribute="trailing" secondItem="gKb-NO-5id" secondAttribute="trailing" id="J5w-yT-fDH"/>
@@ -81,13 +86,16 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="j4Y-Dj-LW3" secondAttribute="bottom" id="W1v-c9-9Ao"/>
                             <constraint firstItem="wxk-KB-pfi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="a8I-YO-OLq"/>
                             <constraint firstAttribute="trailing" secondItem="ezh-vk-ncz" secondAttribute="trailing" id="aU1-Pn-E9z"/>
+                            <constraint firstAttribute="trailing" secondItem="eVS-PN-yGI" secondAttribute="trailing" id="bQG-KL-0z9"/>
                             <constraint firstItem="i9t-jK-5kb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cqJ-x7-vfn"/>
+                            <constraint firstItem="eVS-PN-yGI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eOf-gw-xYD"/>
                             <constraint firstItem="gKb-NO-5id" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="eiw-mR-MML"/>
                             <constraint firstItem="j4Y-Dj-LW3" firstAttribute="top" secondItem="ezh-vk-ncz" secondAttribute="bottom" constant="20" id="fan-kO-DJd"/>
                             <constraint firstItem="j4Y-Dj-LW3" firstAttribute="top" secondItem="wxk-KB-pfi" secondAttribute="bottom" id="gSn-Y4-37d"/>
                             <constraint firstItem="i9t-jK-5kb" firstAttribute="top" secondItem="gKb-NO-5id" secondAttribute="bottom" constant="20" id="qdm-kC-rgw"/>
                             <constraint firstItem="j4Y-Dj-LW3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sIP-E5-v2U"/>
                             <constraint firstItem="ezh-vk-ncz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xOL-Cz-uwq"/>
+                            <constraint firstItem="eVS-PN-yGI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="yXl-wj-fg9"/>
                         </constraints>
                     </view>
                     <connections>
@@ -102,6 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
     </scenes>
 </document>
