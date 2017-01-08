@@ -154,9 +154,15 @@ extension ViewController : UITextFieldDelegate {
 		}
 	}
 	
-	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+	func textFieldDidEndEditing(_ textField: UITextField) {
 		editingTextField = nil
-		textField.resignFirstResponder()
-		return true
+		if textField.text?.characters.count == 0 {
+			if textField.tag == 1 {
+				textField.text = "TOP"
+			} else if textField.tag == 2 {
+				textField.text = "BOTTOM"
+			}
+			
+		}
 	}
 }
