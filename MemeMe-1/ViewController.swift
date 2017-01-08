@@ -29,7 +29,7 @@ class ViewController: UIViewController {
 		let memeTextAttributes:[String:Any] = [
 			NSStrokeColorAttributeName: UIColor.black,
 			NSForegroundColorAttributeName: UIColor.white,
-			NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 44)!,
+			NSFontAttributeName: UIFont(name: "Impact", size: 44)!,
 			NSStrokeWidthAttributeName: -4.0]
 		
 		topTextField.defaultTextAttributes = memeTextAttributes

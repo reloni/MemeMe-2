@@ -14,6 +14,7 @@
 		6E5DFFF81E2157CB009F587A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E5DFFF61E2157CB009F587A /* Main.storyboard */; };
 		6E5DFFFA1E2157CB009F587A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E5DFFF91E2157CB009F587A /* Assets.xcassets */; };
 		6E5DFFFD1E2157CB009F587A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E5DFFFB1E2157CB009F587A /* LaunchScreen.storyboard */; };
+		6E91DE271E2296D000942DA8 /* impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E91DE261E2296D000942DA8 /* impact.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		6E5DFFF91E2157CB009F587A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E5DFFFC1E2157CB009F587A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E5DFFFE1E2157CB009F587A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E91DE261E2296D000942DA8 /* impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = impact.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		6E5DFFF11E2157CB009F587A /* MemeMe-1 */ = {
 			isa = PBXGroup;
 			children = (
+				6E91DE261E2296D000942DA8 /* impact.ttf */,
 				6E5DFFF21E2157CB009F587A /* AppDelegate.swift */,
 				6E5DFFF41E2157CB009F587A /* ViewController.swift */,
 				6E5DFFF61E2157CB009F587A /* Main.storyboard */,
@@ -139,6 +142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E91DE271E2296D000942DA8 /* impact.ttf in Resources */,
 				6E5DFFFD1E2157CB009F587A /* LaunchScreen.storyboard in Resources */,
 				6E5DFFFA1E2157CB009F587A /* Assets.xcassets in Resources */,
 				6E5DFFF81E2157CB009F587A /* Main.storyboard in Resources */,
