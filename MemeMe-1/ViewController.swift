@@ -98,8 +98,21 @@ class ViewController: UIViewController {
 	
 	@IBAction func share(_ sender: Any) {
 		presentActivities(with: [generateMemeImage()]) { result in
-				print("user result: \(result.1)")
+			if result.1 {
+				self.reset()
+			}
 		}
+	}
+	
+	@IBAction func cancel(_ sender: Any) {
+		reset()
+	}
+	
+	func reset() {
+		topTextField.text = "TOP"
+		bottomTextField.text = "BOTTOM"
+		imageView.image = nil
+		shareButton.isEnabled = false
 	}
 	
 	func generateMemeImage() -> UIImage {
