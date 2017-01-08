@@ -66,7 +66,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="gKb-NO-5id" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CuB-Ga-ufv"/>
                             <constraint firstItem="wxk-KB-pfi" firstAttribute="top" secondItem="gKb-NO-5id" secondAttribute="bottom" id="G08-2h-7JK"/>
@@ -88,10 +88,12 @@
                     </view>
                     <connections>
                         <outlet property="bottomTextField" destination="ezh-vk-ncz" id="l4b-Vz-DXl"/>
+                        <outlet property="bottomToolBar" destination="j4Y-Dj-LW3" id="1pM-HA-kdl"/>
                         <outlet property="cameraButton" destination="BXW-2K-Uun" id="TnC-NV-vvn"/>
                         <outlet property="imageView" destination="wxk-KB-pfi" id="UfO-Uv-WwM"/>
                         <outlet property="shareButton" destination="FSc-de-N5q" id="zMx-Vn-SOg"/>
                         <outlet property="topTextField" destination="i9t-jK-5kb" id="era-hS-8Tv"/>
+                        <outlet property="topToolBar" destination="gKb-NO-5id" id="sQa-Ka-5AB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

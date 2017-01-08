@@ -309,6 +309,7 @@
 				6E5D00031E2157CB009F587A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E5DFFEA1E2157CB009F587A /* Build configuration list for PBXProject "MemeMe-1" */ = {
 			isa = XCConfigurationList;

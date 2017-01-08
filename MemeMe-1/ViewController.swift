@@ -16,6 +16,8 @@ class ViewController: UIViewController {
 	@IBOutlet weak var topTextField: UITextField!
 	@IBOutlet weak var bottomTextField: UITextField!
 	@IBOutlet weak var shareButton: UIBarButtonItem!
+	@IBOutlet weak var topToolBar: UIToolbar!
+	@IBOutlet weak var bottomToolBar: UIToolbar!
 	
 	var editingTextField: UITextField?
 
@@ -95,6 +97,23 @@ class ViewController: UIViewController {
 	}
 	
 	@IBAction func share(_ sender: Any) {
+		presentActivities(with: [generateMemeImage()]) { result in
+				print("user result: \(result.1)")
+		}
+	}
+	
+	func generateMemeImage() -> UIImage {
+		topToolBar.isHidden = true
+		bottomToolBar.isHidden = true
+		
+		UIGraphicsBeginImageContext(view.frame.size)
+		view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+		let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+
+		topToolBar.isHidden = false
+		bottomToolBar.isHidden = false
+		
+		return memedImage
 	}
 }
 

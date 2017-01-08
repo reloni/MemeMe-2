@@ -34,6 +34,17 @@ extension UIViewController {
 		pickerController.sourceType = sourceType
 		present(pickerController, animated: true, completion: nil)
 	}
+	
+	func presentActivities(with items: [Any], completion: UIActivityViewControllerCompletionWithItemsHandler? = nil) {
+		let activityController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+		activityController.excludedActivityTypes = [UIActivityType.assignToContact,
+		                                            UIActivityType.openInIBooks,
+		                                            UIActivityType.postToVimeo,
+		                                            UIActivityType.postToWeibo,
+		                                            UIActivityType.copyToPasteboard]
+		activityController.completionWithItemsHandler = completion
+		present(activityController, animated: true, completion: nil)
+	}
 }
 
 func requestPhotosAccess(completion: @escaping (Bool) -> ()) {
