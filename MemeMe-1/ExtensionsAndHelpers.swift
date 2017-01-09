@@ -52,6 +52,10 @@ extension UIViewController {
 		activityController.popoverPresentationController?.sourceView = sourceView
 		present(activityController, animated: true, completion: nil)
 	}
+	
+	func saveMeme(topText: String, bottomText: String, originalImage: UIImage, memedImage: UIImage) {
+		let _ = Meme(topText: topText, bottomText: bottomText, originalImage: originalImage, memedImage: memedImage)
+	}
 }
 
 func requestPhotosAccess(completion: @escaping (Bool) -> ()) {

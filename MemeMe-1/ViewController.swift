@@ -93,8 +93,14 @@ class ViewController: UIViewController {
 	}
 	
 	@IBAction func share(_ sender: Any) {
-		presentActivities(with: [generateMemeImage()], sourceView: self.view) { result in
+		let activityImage = generateMemeImage()
+		
+		presentActivities(with: [activityImage], sourceView: self.view) { result in
 			if result.1 {
+				self.saveMeme(topText: self.topTextField.text ?? "",
+				         bottomText: self.bottomTextField.text ?? "",
+				         originalImage: self.imageView.image!,
+				         memedImage: activityImage)
 				self.reset()
 			}
 		}
