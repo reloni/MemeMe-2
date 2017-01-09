@@ -147,6 +147,11 @@ extension ViewController : UITextFieldDelegate {
 		editingTextField = textField
 		return true
 	}
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 	
 	func textFieldDidBeginEditing(_ textField: UITextField) {
 		if textField.text == "TOP" || textField.text == "BOTTOM" {
@@ -162,7 +167,6 @@ extension ViewController : UITextFieldDelegate {
 			} else if textField.tag == 2 {
 				textField.text = "BOTTOM"
 			}
-			
 		}
 	}
 }
