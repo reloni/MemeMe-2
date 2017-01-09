@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeViewController.swift
 //  MemeMe-1
 //
 //  Created by Anton Efimenko on 07.01.17.
@@ -10,7 +10,7 @@ import UIKit
 import Photos
 import AVFoundation
 
-class ViewController: UIViewController {
+class MemeViewController: UIViewController {
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var cameraButton: UIBarButtonItem!
 	@IBOutlet weak var topTextField: UITextField!
@@ -32,8 +32,8 @@ class ViewController: UIViewController {
 			NSFontAttributeName: UIFont(name: "Impact", size: 44)!,
 			NSStrokeWidthAttributeName: -4.0]
         
-        configureTextField(topTextField, defaultTextAttributes: memeTextAttributes, delegate: self)
-        configureTextField(bottomTextField, defaultTextAttributes: memeTextAttributes, delegate: self)
+			configureTextField(topTextField, defaultTextAttributes: memeTextAttributes, delegate: self)
+			configureTextField(bottomTextField, defaultTextAttributes: memeTextAttributes, delegate: self)
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -109,30 +109,9 @@ class ViewController: UIViewController {
 	@IBAction func cancel(_ sender: Any) {
 		reset()
 	}
-	
-	func reset() {
-		topTextField.text = "TOP"
-		bottomTextField.text = "BOTTOM"
-		imageView.image = nil
-		shareButton.isEnabled = false
-	}
-	
-	func generateMemeImage() -> UIImage {
-		topToolBar.isHidden = true
-		bottomToolBar.isHidden = true
-		
-		UIGraphicsBeginImageContext(view.frame.size)
-		view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
-		let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-
-		topToolBar.isHidden = false
-		bottomToolBar.isHidden = false
-		
-		return memedImage
-	}
 }
 
-extension ViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension MemeViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
 		picker.dismiss(animated: true, completion: nil)
 		
@@ -144,7 +123,7 @@ extension ViewController : UIImagePickerControllerDelegate, UINavigationControll
 	}
 }
 
-extension ViewController : UITextFieldDelegate {
+extension MemeViewController : UITextFieldDelegate {
 	func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
 		editingTextField = textField
 		return true

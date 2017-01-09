@@ -12,8 +12,6 @@ import Photos
 
 extension Notification {
 	func keyboardHeight() -> CGFloat {
-		//let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
-		//return keyboardSize.cgRectValue.height
 		return (userInfo?[UIKeyboardFrameEndUserInfoKey] as? CGRect)?.height ?? 0
 	}
 }
@@ -55,6 +53,29 @@ extension UIViewController {
 	
 	func saveMeme(topText: String, bottomText: String, originalImage: UIImage, memedImage: UIImage) {
 		let _ = Meme(topText: topText, bottomText: bottomText, originalImage: originalImage, memedImage: memedImage)
+	}
+}
+
+extension MemeViewController {
+	func reset() {
+		topTextField.text = "TOP"
+		bottomTextField.text = "BOTTOM"
+		imageView.image = nil
+		shareButton.isEnabled = false
+	}
+	
+	func generateMemeImage() -> UIImage {
+		topToolBar.isHidden = true
+		bottomToolBar.isHidden = true
+		
+		UIGraphicsBeginImageContext(view.frame.size)
+		view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+		let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+		
+		topToolBar.isHidden = false
+		bottomToolBar.isHidden = false
+		
+		return memedImage
 	}
 }
 
