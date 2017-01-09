@@ -31,13 +31,9 @@ class ViewController: UIViewController {
 			NSForegroundColorAttributeName: UIColor.white,
 			NSFontAttributeName: UIFont(name: "Impact", size: 44)!,
 			NSStrokeWidthAttributeName: -4.0]
-		
-		topTextField.defaultTextAttributes = memeTextAttributes
-		topTextField.textAlignment = .center
-		topTextField.delegate = self
-		bottomTextField.defaultTextAttributes = memeTextAttributes
-		bottomTextField.textAlignment = .center
-		bottomTextField.delegate = self
+        
+        configureTextField(topTextField, defaultTextAttributes: memeTextAttributes, delegate: self)
+        configureTextField(bottomTextField, defaultTextAttributes: memeTextAttributes, delegate: self)
 	}
 
 	override func viewWillAppear(_ animated: Bool) {

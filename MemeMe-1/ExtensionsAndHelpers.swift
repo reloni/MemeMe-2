@@ -19,6 +19,12 @@ extension Notification {
 }
 
 extension UIViewController {
+    func configureTextField(_ textField: UITextField, defaultTextAttributes: [String: Any] = [:], delegate: UITextFieldDelegate? = nil) {
+        textField.defaultTextAttributes = defaultTextAttributes
+        textField.textAlignment = .center
+        textField.delegate = delegate
+    }
+    
 	func showErrorAlert(message: String) {
 		let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
 		let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
