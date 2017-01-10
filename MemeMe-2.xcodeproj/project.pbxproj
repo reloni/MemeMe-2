@@ -21,7 +21,7 @@
 /* Begin PBXFileReference section */
 		6E5D00051E215D9D009F587A /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		6E5D00071E217023009F587A /* ExtensionsAndHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionsAndHelpers.swift; sourceTree = "<group>"; };
-		6E5DFFEF1E2157CB009F587A /* MemeMe-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MemeMe-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E5DFFEF1E2157CB009F587A /* MemeMe-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MemeMe-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E5DFFF21E2157CB009F587A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E5DFFF41E2157CB009F587A /* MemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeViewController.swift; sourceTree = "<group>"; };
 		6E5DFFF71E2157CB009F587A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 		6E5DFFF01E2157CB009F587A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6E5DFFEF1E2157CB009F587A /* MemeMe-1.app */,
+				6E5DFFEF1E2157CB009F587A /* MemeMe-2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,9 +88,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6E5DFFEE1E2157CB009F587A /* MemeMe-1 */ = {
+		6E5DFFEE1E2157CB009F587A /* MemeMe-2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E5D00011E2157CB009F587A /* Build configuration list for PBXNativeTarget "MemeMe-1" */;
+			buildConfigurationList = 6E5D00011E2157CB009F587A /* Build configuration list for PBXNativeTarget "MemeMe-2" */;
 			buildPhases = (
 				6E5DFFEB1E2157CB009F587A /* Sources */,
 				6E5DFFEC1E2157CB009F587A /* Frameworks */,
@@ -100,9 +100,9 @@
 			);
 			dependencies = (
 			);
-			name = "MemeMe-1";
+			name = "MemeMe-2";
 			productName = "MemeMe-1";
-			productReference = 6E5DFFEF1E2157CB009F587A /* MemeMe-1.app */;
+			productReference = 6E5DFFEF1E2157CB009F587A /* MemeMe-2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -122,7 +122,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6E5DFFEA1E2157CB009F587A /* Build configuration list for PBXProject "MemeMe-1" */;
+			buildConfigurationList = 6E5DFFEA1E2157CB009F587A /* Build configuration list for PBXProject "MemeMe-2" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -135,7 +135,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6E5DFFEE1E2157CB009F587A /* MemeMe-1 */,
+				6E5DFFEE1E2157CB009F587A /* MemeMe-2 */,
 			);
 		};
 /* End PBXProject section */
@@ -238,7 +238,7 @@
 				DEVELOPMENT_TEAM = SJMSRXG797;
 				INFOPLIST_FILE = "MemeMe-1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AntonEfimenko.MemeMe-1";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AntonEfimenko.MemeMe-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -251,7 +251,7 @@
 				DEVELOPMENT_TEAM = SJMSRXG797;
 				INFOPLIST_FILE = "MemeMe-1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AntonEfimenko.MemeMe-1";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AntonEfimenko.MemeMe-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -310,7 +310,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6E5D00011E2157CB009F587A /* Build configuration list for PBXNativeTarget "MemeMe-1" */ = {
+		6E5D00011E2157CB009F587A /* Build configuration list for PBXNativeTarget "MemeMe-2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E5D00021E2157CB009F587A /* Debug */,
@@ -319,7 +319,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6E5DFFEA1E2157CB009F587A /* Build configuration list for PBXProject "MemeMe-1" */ = {
+		6E5DFFEA1E2157CB009F587A /* Build configuration list for PBXProject "MemeMe-2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E5DFFFF1E2157CB009F587A /* Debug */,

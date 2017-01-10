@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6E5DFFEE1E2157CB009F587A"
-               BuildableName = "MemeMe-1.app"
-               BlueprintName = "MemeMe-1"
-               ReferencedContainer = "container:MemeMe-1.xcodeproj">
+               BuildableName = "MemeMe-2.app"
+               BlueprintName = "MemeMe-2"
+               ReferencedContainer = "container:MemeMe-2.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6E5DFFEE1E2157CB009F587A"
-            BuildableName = "MemeMe-1.app"
-            BlueprintName = "MemeMe-1"
-            ReferencedContainer = "container:MemeMe-1.xcodeproj">
+            BuildableName = "MemeMe-2.app"
+            BlueprintName = "MemeMe-2"
+            ReferencedContainer = "container:MemeMe-2.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6E5DFFEE1E2157CB009F587A"
-            BuildableName = "MemeMe-1.app"
-            BlueprintName = "MemeMe-1"
-            ReferencedContainer = "container:MemeMe-1.xcodeproj">
+            BuildableName = "MemeMe-2.app"
+            BlueprintName = "MemeMe-2"
+            ReferencedContainer = "container:MemeMe-2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6E5DFFEE1E2157CB009F587A"
-            BuildableName = "MemeMe-1.app"
-            BlueprintName = "MemeMe-1"
-            ReferencedContainer = "container:MemeMe-1.xcodeproj">
+            BuildableName = "MemeMe-2.app"
+            BlueprintName = "MemeMe-2"
+            ReferencedContainer = "container:MemeMe-2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
