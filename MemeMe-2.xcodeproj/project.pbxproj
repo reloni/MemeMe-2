@@ -16,6 +16,7 @@
 		6E5DFFFD1E2157CB009F587A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E5DFFFB1E2157CB009F587A /* LaunchScreen.storyboard */; };
 		6E7C46391E24008700551A07 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C46381E24008700551A07 /* Meme.swift */; };
 		6E91DE271E2296D000942DA8 /* impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E91DE261E2296D000942DA8 /* impact.ttf */; };
+		6EF9C8CB1E27F4B70080998A /* SentMemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF9C8CA1E27F4B70080998A /* SentMemesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		6E5DFFFE1E2157CB009F587A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E7C46381E24008700551A07 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		6E91DE261E2296D000942DA8 /* impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = impact.ttf; sourceTree = "<group>"; };
+		6EF9C8CA1E27F4B70080998A /* SentMemesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMemesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				6E5DFFFE1E2157CB009F587A /* Info.plist */,
 				6E5D00071E217023009F587A /* ExtensionsAndHelpers.swift */,
 				6E7C46381E24008700551A07 /* Meme.swift */,
+				6EF9C8CA1E27F4B70080998A /* SentMemesTableViewController.swift */,
 			);
 			path = "MemeMe-1";
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				6E5DFFF51E2157CB009F587A /* MemeViewController.swift in Sources */,
 				6E7C46391E24008700551A07 /* Meme.swift in Sources */,
 				6E5D00081E217023009F587A /* ExtensionsAndHelpers.swift in Sources */,
+				6EF9C8CB1E27F4B70080998A /* SentMemesTableViewController.swift in Sources */,
 				6E5DFFF31E2157CB009F587A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,12 +17,16 @@ extension Notification {
 }
 
 extension UIViewController {
-    func configureTextField(_ textField: UITextField, defaultTextAttributes: [String: Any] = [:], delegate: UITextFieldDelegate? = nil) {
-        textField.defaultTextAttributes = defaultTextAttributes
-        textField.textAlignment = .center
-        textField.delegate = delegate
-    }
-    
+	var appDelegate: AppDelegate {
+		return UIApplication.shared.delegate as! AppDelegate
+	}
+	
+	func configureTextField(_ textField: UITextField, defaultTextAttributes: [String: Any] = [:], delegate: UITextFieldDelegate? = nil) {
+		textField.defaultTextAttributes = defaultTextAttributes
+		textField.textAlignment = .center
+		textField.delegate = delegate
+	}
+	
 	func showErrorAlert(message: String) {
 		let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
 		let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -52,7 +56,14 @@ extension UIViewController {
 	}
 	
 	func saveMeme(topText: String, bottomText: String, originalImage: UIImage, memedImage: UIImage) {
-		let _ = Meme(topText: topText, bottomText: bottomText, originalImage: originalImage, memedImage: memedImage)
+		let meme = Meme(topText: topText, bottomText: bottomText, originalImage: originalImage, memedImage: memedImage)
+		appDelegate.memes.append(meme)
+	}
+	
+	func presentMemeController(withMeme meme: Meme? = nil) {
+		let controller = storyboard?.instantiateViewController(withIdentifier: "MakeMemeController") as! MemeViewController
+		controller.editMeme = meme
+		present(controller, animated: true, completion: nil)
 	}
 }
 

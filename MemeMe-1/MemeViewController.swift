@@ -20,6 +20,8 @@ class MemeViewController: UIViewController {
 	@IBOutlet weak var bottomToolBar: UIToolbar!
 	
 	var editingTextField: UITextField?
+	
+	var editMeme: Meme? = nil
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -34,6 +36,13 @@ class MemeViewController: UIViewController {
         
 			configureTextField(topTextField, defaultTextAttributes: memeTextAttributes, delegate: self)
 			configureTextField(bottomTextField, defaultTextAttributes: memeTextAttributes, delegate: self)
+		
+		if let editMeme = editMeme {
+			topTextField.text = editMeme.topText
+			bottomTextField.text = editMeme.bottomText
+			imageView.image = editMeme.originalImage
+			shareButton.isEnabled = true
+		}
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -101,13 +110,17 @@ class MemeViewController: UIViewController {
 				         bottomText: self.bottomTextField.text ?? "",
 				         originalImage: self.imageView.image!,
 				         memedImage: activityImage)
-				self.reset()
+				self.dismiss(animated: true, completion: nil)
 			}
 		}
 	}
 	
 	@IBAction func cancel(_ sender: Any) {
-		reset()
+		if appDelegate.memes.count == 0 {
+			reset()
+		} else {
+			dismiss(animated: true, completion: nil)
+		}
 	}
 }
 
