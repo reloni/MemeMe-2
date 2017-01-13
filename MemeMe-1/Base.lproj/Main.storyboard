@@ -125,10 +125,10 @@
             </objects>
             <point key="canvasLocation" x="-935" y="228"/>
         </scene>
-        <!--Meme collection-->
+        <!--Sent memes-->
         <scene sceneID="8dB-RT-Et8">
             <objects>
-                <viewController title="Meme collection" id="sUi-oe-G2w" sceneMemberID="viewController">
+                <viewController id="sUi-oe-G2w" customClass="SentMemesCollectionViewController" customModule="MemeMe_2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2SB-cW-P7B"/>
                         <viewControllerLayoutGuide type="bottom" id="rEG-xc-daz"/>
@@ -147,7 +147,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lE4-wf-K6F">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemeCell" id="lE4-wf-K6F">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -156,6 +156,10 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="sUi-oe-G2w" id="bLW-YY-hSM"/>
+                                    <outlet property="delegate" destination="sUi-oe-G2w" id="Omq-Y9-9Fd"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -167,6 +171,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sent memes" id="ixl-36-qA3"/>
+                    <connections>
+                        <outlet property="collection" destination="Mhe-pB-C6k" id="ZP3-7j-VYa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eYg-wO-tLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -272,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966" y="-523"/>
+            <point key="canvasLocation" x="735" y="-692"/>
         </scene>
     </scenes>
     <resources>
