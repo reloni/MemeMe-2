@@ -46,12 +46,21 @@ extension SentMemesTableViewController : UITableViewDataSource {
 		cell.imageView?.image = meme.memedImage
 		return cell
 	}
+	
+	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+		guard editingStyle == .delete else { return }
+		appDelegate.memes.remove(at: indexPath.row)
+		tableView.deleteRows(at: [indexPath], with: .fade)
+	}
+	
+	func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+		return UITableViewCellEditingStyle.delete
+	}
 }
 
 extension SentMemesTableViewController : UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let meme = appDelegate.memes[indexPath.row]
-		//presentMemeController(withMeme: meme)
 		presentMemeDetailsController(withMeme: meme)
 	}
 }
