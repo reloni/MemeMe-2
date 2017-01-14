@@ -24,12 +24,12 @@ final class SentMemesTableViewController: UIViewController {
 		super.viewDidAppear(true)
 		
 		if appDelegate.memes.count == 0 {
-			presentMemeController()
+			presentMemeEditController()
 		}
 	}
 	
 	@IBAction func newMeme(_ sender: Any) {
-		presentMemeController()
+		presentMemeEditController()
 	}
 	
 }
@@ -51,6 +51,7 @@ extension SentMemesTableViewController : UITableViewDataSource {
 extension SentMemesTableViewController : UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let meme = appDelegate.memes[indexPath.row]
-		presentMemeController(withMeme: meme)
+		//presentMemeController(withMeme: meme)
+		presentMemeDetailsController(withMeme: meme)
 	}
 }

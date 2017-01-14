@@ -19,7 +19,7 @@ final class SentMemesCollectionViewController : UIViewController {
 	}
 	
 	@IBAction func newMeme(_ sender: Any) {
-		presentMemeController()
+		presentMemeEditController()
 	}
 	
 	override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -50,7 +50,7 @@ extension SentMemesCollectionViewController : UICollectionViewDataSource {
 extension SentMemesCollectionViewController : UICollectionViewDelegate {
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		let meme = appDelegate.memes[indexPath.row]
-		presentMemeController(withMeme: meme)
+		presentMemeDetailsController(withMeme: meme)
 	}
 }
 

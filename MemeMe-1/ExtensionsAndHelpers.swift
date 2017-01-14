@@ -60,10 +60,16 @@ extension UIViewController {
 		appDelegate.memes.append(meme)
 	}
 	
-	func presentMemeController(withMeme meme: Meme? = nil) {
+	func presentMemeEditController(withMeme meme: Meme? = nil) {
 		let controller = storyboard?.instantiateViewController(withIdentifier: "MakeMemeController") as! MemeViewController
 		controller.editMeme = meme
 		present(controller, animated: true, completion: nil)
+	}
+	
+	func presentMemeDetailsController(withMeme meme: Meme) {
+		let controller = storyboard?.instantiateViewController(withIdentifier: "MemeDetailsController") as! MemeDetailsController
+		controller.meme = meme
+		navigationController?.pushViewController(controller, animated: true)
 	}
 }
 

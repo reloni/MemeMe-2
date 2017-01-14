@@ -199,6 +199,38 @@
             </objects>
             <point key="canvasLocation" x="-151" y="227"/>
         </scene>
+        <!--Meme Details Controller-->
+        <scene sceneID="xr7-mM-aaA">
+            <objects>
+                <viewController storyboardIdentifier="MemeDetailsController" id="uQW-jD-Qd9" customClass="MemeDetailsController" customModule="MemeMe_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZRN-Fa-cx1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dbo-3D-8Pg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="92q-W9-Ixk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EC4-8I-1u3">
+                                <rect key="frame" x="16" y="20" width="288" height="548"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EC4-8I-1u3" firstAttribute="top" secondItem="ZRN-Fa-cx1" secondAttribute="bottom" id="8QY-qU-0k3"/>
+                            <constraint firstItem="Dbo-3D-8Pg" firstAttribute="top" secondItem="EC4-8I-1u3" secondAttribute="bottom" id="FB0-2n-6sm"/>
+                            <constraint firstItem="EC4-8I-1u3" firstAttribute="leading" secondItem="92q-W9-Ixk" secondAttribute="leadingMargin" id="XTz-xm-awk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EC4-8I-1u3" secondAttribute="trailing" id="YnC-G8-3Sd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="EC4-8I-1u3" id="fXb-Ru-LVT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Si3-Ni-r9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="735" y="227"/>
+        </scene>
         <!--Meme View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
