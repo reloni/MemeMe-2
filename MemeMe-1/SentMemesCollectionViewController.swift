@@ -11,6 +11,16 @@ import UIKit
 final class SentMemesCollectionViewController : UIViewController {
 	@IBOutlet weak var collection: UICollectionView!
 	
+	let sectionInsets = UIEdgeInsets(top: 10.0, left: 15.0, bottom: 10.0, right: 15.0)
+	let itemsPerRow: CGFloat = 3
+	
+	override func viewWillAppear(_ animated: Bool) {
+		collection.reloadSections(IndexSet(integer: 0))
+	}
+	
+	@IBAction func newMeme(_ sender: Any) {
+		presentMemeController()
+	}
 }
 
 extension SentMemesCollectionViewController : UICollectionViewDataSource {
@@ -23,14 +33,32 @@ extension SentMemesCollectionViewController : UICollectionViewDataSource {
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collection.dequeueReusableCell(withReuseIdentifier: "MemeCell", for: indexPath)
-		//let meme = appDelegate.memes[indexPath.row]
-		//cell.textLabel?.text = "\(meme.topText)...\(meme.bottomText)"
-		//cell.imageView?.image = meme.memedImage
+		let cell = collection.dequeueReusableCell(withReuseIdentifier: "MemeCell", for: indexPath) as! MemeCollectionCell
+		let meme = appDelegate.memes[indexPath.row]
+		cell.memeImage.image = meme.memedImage
+		cell.backgroundColor = UIColor.black
 		return cell
 	}
 }
 
 extension SentMemesCollectionViewController : UICollectionViewDelegate {
 	
+}
+
+extension SentMemesCollectionViewController : UICollectionViewDelegateFlowLayout {
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+		let availableWidth = view.frame.width - paddingSpace
+		let widthPerItem = availableWidth / itemsPerRow
+		
+		return CGSize(width: widthPerItem, height: widthPerItem)
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+		return sectionInsets
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+		return sectionInsets.left
+	}
 }
