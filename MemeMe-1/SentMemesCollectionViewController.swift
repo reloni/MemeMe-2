@@ -23,7 +23,9 @@ final class SentMemesCollectionViewController : UIViewController {
 	}
 	
 	override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-		coordinator.animate(alongsideTransition: { _ in self.collection.reloadSections(IndexSet(integer: 0)) }, completion: nil)
+		if (isViewLoaded && view.window != nil) {
+			coordinator.animate(alongsideTransition: { _ in self.collection.reloadSections(IndexSet(integer: 0)) }, completion: nil)
+		}
 	}
 }
 
@@ -46,7 +48,10 @@ extension SentMemesCollectionViewController : UICollectionViewDataSource {
 }
 
 extension SentMemesCollectionViewController : UICollectionViewDelegate {
-	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let meme = appDelegate.memes[indexPath.row]
+		presentMemeController(withMeme: meme)
+	}
 }
 
 extension SentMemesCollectionViewController : UICollectionViewDelegateFlowLayout {
