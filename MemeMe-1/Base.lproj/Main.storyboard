@@ -178,10 +178,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Mhe-pB-C6k" firstAttribute="top" secondItem="2SB-cW-P7B" secondAttribute="bottom" id="69S-1V-2YS"/>
-                            <constraint firstItem="Mhe-pB-C6k" firstAttribute="leading" secondItem="Sqc-T5-J7s" secondAttribute="leading" id="K21-Ne-R0X"/>
-                            <constraint firstAttribute="trailing" secondItem="Mhe-pB-C6k" secondAttribute="trailing" id="S0A-fA-0mx"/>
-                            <constraint firstItem="rEG-xc-daz" firstAttribute="top" secondItem="Mhe-pB-C6k" secondAttribute="bottom" id="yGH-Qy-QhT"/>
+                            <constraint firstItem="Mhe-pB-C6k" firstAttribute="top" secondItem="2SB-cW-P7B" secondAttribute="bottom" priority="999" id="Gxn-kN-8fg"/>
+                            <constraint firstItem="Mhe-pB-C6k" firstAttribute="leading" secondItem="Sqc-T5-J7s" secondAttribute="leading" identifier="CollectionLeading" id="K21-Ne-R0X"/>
+                            <constraint firstAttribute="trailing" secondItem="Mhe-pB-C6k" secondAttribute="trailing" identifier="CollectionTrailing" id="S0A-fA-0mx"/>
+                            <constraint firstItem="rEG-xc-daz" firstAttribute="top" secondItem="Mhe-pB-C6k" secondAttribute="bottom" identifier="CollectionBottom" id="yGH-Qy-QhT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sent memes" id="ixl-36-qA3">
